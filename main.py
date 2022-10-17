@@ -4,7 +4,7 @@ import os, sys
 if os.name == "posix":
   v="clear"
 elif os.name == "ce" or os.name =="nt" or os.name == "dos":
-  c="cls"
+  v="cls"
 
 def ns(c):
   while c!=("s") and c!=("n"):
@@ -38,12 +38,12 @@ Nivel1: entre 0 y 100
 Nivel2: entre 100 y 1000
 Nivel3: entre 1000 y 10000
 Nivel4: entre 10000 y 100000""")
-  level = OKI(input("Escriba su opción <de 1 a 4>:"))
+  level = OKI(input("Escriba su opción (de 1 a 4):"))
   print("")
   while level<1 or level>4:
     level= OKI(input("Escriba un número entre 1 y 4:"))
 
-max=(level +1)
+max=10**(level+1)
 Di=("0 y "+ str(max))
 num_e=random.randint(0,max)
 
